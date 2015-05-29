@@ -1,7 +1,7 @@
 
 #' @import htmlwidgets
 #' @export
-sigma <- function(gexf, drawEdges = TRUE, drawNodes = TRUE, drawLabels = FALSE,
+sigma <- function(gexf, drawEdges = TRUE, drawNodes = TRUE, drawLabels = FALSE, labelThreshold = 8,
                   width = NULL, height = NULL) {
   
   # read the gexf file
@@ -11,7 +11,8 @@ sigma <- function(gexf, drawEdges = TRUE, drawNodes = TRUE, drawLabels = FALSE,
   settings <- list(
     drawEdges = drawEdges,
     drawNodes = drawNodes,
-    drawLabels = drawLabels
+    drawLabels = drawLabels, 
+    labelThreshold = labelThreshold
   )
   
   # pass the data and settings using 'x'
