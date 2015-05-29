@@ -5,7 +5,7 @@ sigma <- function(gexf, drawEdges = TRUE, drawNodes = TRUE, drawLabels = FALSE, 
                   width = NULL, height = NULL) {
   
   # read the gexf file
-  data <- paste(readLines(gexf), collapse="\n")
+  data <- paste(gexf, collapse="\n")
   
   # create a list that contains the settings
   settings <- list(
