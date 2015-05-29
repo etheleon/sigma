@@ -10,7 +10,7 @@ sigma <- function(gexf, drawEdges = TRUE, drawNodes = TRUE, drawLabels = FALSE,
   # create a list that contains the settings
   settings <- list(
     drawEdges = drawEdges,
-    drawNodes = drawNodes
+    drawNodes = drawNodes,
     drawLabels = drawLabels
   )
   
