@@ -40,6 +40,7 @@ HTMLWidgets.widget({
 
     // forward resize on to sigma renderers
     for (var name in instance.sig.renderers)
-      instance.sig.renderers[name].resize(width);
+      console.log("this is the height:"+height+" and width" + width)
+      instance.sig.renderers[name].resize(width, height);
   }
 });
