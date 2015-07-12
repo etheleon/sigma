@@ -3,8 +3,10 @@ HTMLWidgets.widget({
   name: "sigma",
 
   type: "output",
+  
+  aheight: "500px"
 
-  initialize: function(el, width, height) {
+  initialize: function(el, width, height=aheight) {
       console.log("this is the init height:"+height+" and width" + width)
     // create our sigma object and bind it to the element
     var sig = new sigma(el.id);
@@ -36,7 +38,7 @@ HTMLWidgets.widget({
     );
   },
 
-  resize: function(el, width, height, instance) {
+  resize: function(el, width, height=aheight, instance) {
 
     // forward resize on to sigma renderers
     for (var name in instance.sig.renderers)
