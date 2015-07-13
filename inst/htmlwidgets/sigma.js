@@ -26,6 +26,18 @@ HTMLWidgets.widget({
       console.log(name);
       instance.sig.settings(name, x.settings[name]);
     }
+    // new method neighbors
+    sigma.classes.graph.addMethod('neighbors', function(nodeId) {
+    var k,
+        neighbors = {},
+        index = this.allNeighborsIndex[nodeId] || {};
+
+    for (k in index)
+      neighbors[k] = this.nodesIndex[k];
+
+    return neighbors;
+    });
+
 
     // update the sigma instance
     sigma.parsers.gexf(
