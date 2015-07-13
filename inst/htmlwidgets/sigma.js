@@ -5,6 +5,19 @@ HTMLWidgets.widget({
   type: "output",
   
   initialize: function(el, width, height) {
+    
+    // neighbors function
+    sigma.classes.graph.addMethod('neighbors', function(nodeId) {
+    var k,
+        neighbors = {},
+        index = this.allNeighborsIndex[nodeId] || {};
+
+    for (k in index)
+      neighbors[k] = this.nodesIndex[k];
+
+    return neighbors;
+    });
+    
     console.log("this is the init height:"+height+" and width" + width)
     // create our sigma object and bind it to the element
     var sig = new sigma(el.id);
@@ -26,17 +39,7 @@ HTMLWidgets.widget({
       console.log(name);
       instance.sig.settings(name, x.settings[name]);
     }
-    // new method neighbors
-    sigma.classes.graph.addMethod('neighbors', function(nodeId) {
-    var k,
-        neighbors = {},
-        index = this.allNeighborsIndex[nodeId] || {};
-
-    for (k in index)
-      neighbors[k] = this.nodesIndex[k];
-
-    return neighbors;
-    });
+    
 
 
     // update the sigma instance
