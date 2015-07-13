@@ -4,7 +4,6 @@ HTMLWidgets.widget({
 
   type: "output",
   
-
   initialize: function(el, width, height) {
     console.log("this is the init height:"+height+" and width" + width)
     // create our sigma object and bind it to the element
@@ -23,8 +22,10 @@ HTMLWidgets.widget({
     var data = parser.parseFromString(x.data, "application/xml");
 
     // apply settings
-    for (var name in x.settings)
+    for (var name in x.settings){
+      console.log(name);
       instance.sig.settings(name, x.settings[name]);
+    }
 
     // update the sigma instance
     sigma.parsers.gexf(
@@ -39,8 +40,8 @@ HTMLWidgets.widget({
 
   resize: function(el, width, height, instance) {
     // forward resize on to sigma renderers
-    for (var name in instance.sig.renderers)
+    //for (var name in instance.sig.renderers)
       console.log("this is the height:"+height+" and width" + width)
-      instance.sig.renderers[name].resize(width, height);
+    //  instance.sig.renderers[name].resize(width, height);
   }
 });
