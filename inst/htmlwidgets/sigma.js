@@ -51,7 +51,8 @@ HTMLWidgets.widget({
       // nodes and edges, like this:
       s.graph.nodes().forEach(function(n) {
         console.log(n.color);
-        n.originalColor = n.color;
+        n.originalColor = "rgb(190,190,190,0.1)"
+        //n.color;
       });
       s.graph.edges().forEach(function(e) {
         e.originalColor = e.color;
